@@ -1,6 +1,7 @@
 body{
     background-color: #D9D9D9;
     padding-top: 60px;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 .mylogocontainer{
     display: flex;
@@ -19,6 +20,10 @@ body{
     top: 10px;
     right: 10px;
     z-index: 1001; /* Bring logo to the front */
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+.mylogo:hover {
+    transform: scale(2.2); /* Enlarge image on hover */
 }
 @keyframes mylogo{
     0%{
@@ -82,7 +87,7 @@ body{
 .highlight {
     font-size: 4em;
     font-weight: bold;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 
 .cloud {
@@ -166,6 +171,7 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
 }
 
 .resume-img {
@@ -186,11 +192,12 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
 }
 
 .dev-space-row h2 {
     font-size: 2em;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 
 .content-columns {
@@ -200,20 +207,28 @@ body{
     padding: 20px; /* Added padding */
     padding-top: 40px; /* Added top padding */
     align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Make columns wrap on smaller screens */
 }
 
-.resume-column, .dev-space-column {
+.resume-column, .dev-space-column, .certificates-column, .tech-stack-column {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 10px; /* Added padding */
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+    min-width: 250px; /* Ensure columns don't get too narrow */
+}
+
+.resume-column:hover, .dev-space-column:hover, .certificates-column:hover, .tech-stack-column:hover {
+    transform: translateY(-10px); /* Slightly lift column on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
 }
 
 .dev-space-column h2 {
     font-size: 2em;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 
 .dev-link-box {
@@ -254,7 +269,7 @@ body{
 
 .certificates-column h2 {
     font-size: 2em;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 
 .certificates-link-box {
@@ -284,6 +299,59 @@ body{
     color: #fff; /* Change color on hover to white */
 }
 
+.tech-stack-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px; /* Added padding */
+}
+
+.tech-stack-column h2 {
+    font-size: 2em;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.tech-stack-link-box {
+    border: 1px solid #333; /* Added border for each link box */
+    border-radius: 5px; /* Added border radius for each link box */
+    padding: 10px; /* Added padding for each link box */
+    margin-bottom: 10px; /* Added margin between link boxes */
+    text-align: center; /* Centered text */
+    width: 200px; /* Set width */
+    height: 25px; /* Set height to match My Coding Space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em; /* Set font size to match My Coding Space */
+}
+
+.tech-stack-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.certificates-row, .tech-stack-row {
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+}
+
+.certificates-row:hover, .tech-stack-row:hover {
+    transform: translateY(-10px); /* Slightly lift row on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
+}
+
+.dev-link-box, .certificates-link-box, .tech-stack-link-box {
+    transition: transform 0.7s, box-shadow 0.3s; /* Add transition for hover effect */
+}
+
+.dev-link-box:hover, .certificates-link-box:hover, .tech-stack-link-box:hover {
+    transform: translateY(-10px); /* Slightly lift box on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
+}
+
 .projects-section {
     margin-top: 40px;
     padding: 20px;
@@ -292,7 +360,7 @@ body{
 
 .projects-section h2 {
     font-size: 2.5em;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
     margin-bottom: 20px;
 }
 
@@ -307,16 +375,22 @@ body{
     border: 1px solid #333;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+}
+
+.project:hover {
+    transform: translateY(-10px); /* Slightly lift project on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
 }
 
 .project h3 {
     font-size: 1.8em;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 
 .project p {
     font-size: 1.2em;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 
 .project-img {
@@ -343,6 +417,7 @@ body{
     gap: 20px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* Make nav links wrap on smaller screens */
 }
 
 .nav-links li {
@@ -354,8 +429,236 @@ body{
     color: black;
     font-size: 1.2em;
     transition: color 0.3s;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }
 
 .nav-links a:hover {
     color: white;
+}
+
+.anonymous-text-section {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.anonymous-text-section h2 {
+    font-size: 2.5em;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+    margin-bottom: 20px;
+}
+
+.anonymous-text-section textarea {
+    width: 100%;
+    max-width: 400px; /* Decreased max-width */
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.anonymous-text-section button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.anonymous-text-section button:hover {
+    background-color: #555;
+}
+
+.anonymous-text-section #response-message {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: green;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.contact-columns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    padding: 20px;
+    flex-wrap: wrap; /* Make columns wrap on smaller screens */
+}
+
+.email-column, .anonymous-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-width: 250px; /* Ensure columns don't get too narrow */
+}
+
+.email-column h2, .anonymous-column h2 {
+    font-size: 2.5em;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+    margin-bottom: 20px;
+}
+
+.email-column input, .email-column textarea, .anonymous-column textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.email-column button, .anonymous-column button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.email-column button:hover, .anonymous-column button:hover {
+    background-color: #555;
+}
+
+.email-column #email-response-message, .anonymous-column #anonymous-response-message {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: green;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.contact-rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.email-row, .anonymous-row {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #333;
+    /* border: none; */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.email-row h2, .anonymous-row h2 {
+    font-size: 2.0em;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.email-row input, .email-row textarea, .anonymous-row textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.email-row button, .anonymous-row button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.email-row button:hover, .anonymous-row button:hover {
+    background-color: #555;
+}
+
+.email-row #email-response-message, .anonymous-row #anonymous-response-message {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: green;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+.contact-link {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: white;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Add transition */
+    text-align: center; /* Center text */
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    text-align: center; /* Center placeholder text */
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: black; /* Change border color on focus */
+    box-shadow: 0 4px 8px rgba(0, 115, 230, 0.2); /* Enhance box shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+.submit-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Add transition */
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.submit-button:hover {
+    background-color: #005bb5; /* Change background color on hover */
+    transform: translateY(-2px); /* Slightly lift button on hover */
+}
+
+.response-message {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: green;
+    font-family: 'Nunito', sans-serif; /* Set font to Nunito */
 }

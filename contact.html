@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link href="portfolio.css" rel="stylesheet">
 </head>
 <body>
@@ -38,7 +39,51 @@
     <div class="cloud"></div>
     <div class="cloud" style="top: 60px; left: 100px; animation-duration: 25s;"></div>
 
-    <div id="contact-me" class="contact-section">
+    <div class="contact-rows">
+        <div class="email-row">
+            <h2><a href="mailto:ianshpwr@gmail.com" class="contact-link">Contact Me Through Email</a></h2>
+            <!-- <p>Email: <a href="mailto:ianshpwr@gmail.com">ianshpwr@gmail.com</a></p> -->
+        </div>
+
+        <div class="anonymous-row">
+            <h2>Send Me an Anonymous Text</h2>
+            <form id="anonymous-text-form" class="contact-form">
+                <textarea style="height: 30px;" id="anonymous-message" name="message" rows="4" cols="50" placeholder="If you want to tell something Anonymously"></textarea>
+                <br>
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+            <p id="anonymous-response-message" class="response-message"></p>
+        </div>
     </div>
+
+    <script>
+        document.getElementById('anonymous-text-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const message = document.getElementById('anonymous-message').value;
+            const responseMessage = document.getElementById('anonymous-response-message');
+
+            // Replace 'YOUR_ANONYMOUS_WEB_APP_URL' with the URL of your deployed Google Apps Script for anonymous messages
+            const url = 'https://script.google.com/macros/s/AKfycbyzaAsxcxEFq4TAu-d9RqK8XF9j7LSQNARCqvh-tkct8N_CZwYJqB5TooaRi0eNROkZTQ/exec';
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'message': message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                responseMessage.textContent = data.result; // Display the response message
+                document.getElementById('anonymous-message').value = ''; // Clear the textarea
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                responseMessage.textContent = "There was an error sending your message.";
+            });
+        });
+    </script>
 </body>
 </html>
