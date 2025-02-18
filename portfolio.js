@@ -15,4 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
         letter.style.transform = `translate(${x + 50}px, ${y + 50}px)`; // Center in container
         container.appendChild(letter);
     }
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
 });

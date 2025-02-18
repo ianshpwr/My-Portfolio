@@ -410,6 +410,21 @@ body{
     z-index: 1;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -661,4 +676,78 @@ body{
     font-size: 1.2em;
     color: green;
     font-family: 'Nunito', sans-serif; /* Set font to Nunito */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .socials {
+        margin-top: 10px;
+    }
+
+    .about-section, .projects-section, .contact-section {
+        padding: 10px;
+    }
+
+    .profile-pic {
+        height: 100px;
+        width: 100px;
+    }
+
+    .highlight {
+        font-size: 2em;
+    }
+
+    .about-section p, .projects-section p {
+        font-size: 1em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        padding: 10px;
+    }
+
+    .project h3 {
+        font-size: 1.5em;
+    }
+
+    .project p {
+        font-size: 1em;
+    }
+
+    .project-img {
+        width: 100%;
+        height: auto;
+    }
 }
